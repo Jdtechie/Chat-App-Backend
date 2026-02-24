@@ -1,0 +1,50 @@
+/app/core/constant.js
+/app/logs/
+.env
+# Node.js specific
+node_modules/
+node_modules/*
+npm-debug.log*
+yarn-error.log*
+.eslintcache
+.nyc_output
+
+# Editor config files
+.editorconfig
+.vscode/
+
+# IDE specific files
+.idea/
+.DS_Store
+
+# Build output and temporary files
+dist/
+build/
+coverage/
+logs/
+tmp/
+
+# Package-lock and yarn.lock files (optional, depending on workflow)
+package-lock.json
+yarn.lock
+
+# Secrets and sensitive data
+secrets/
+config/secrets.json
+.env*
+
+# Mac OS specific
+.DS_Store
+
+# Windows specific
+Thumbs.db
+node_modules/.bin/fxparser
+node_modules/.bin/mime
+node_modules/.bin/mkdirp
+node_modules/.bin/nodemon
+node_modules/.bin/nodetouch
+node_modules/.bin/nopt
+node_modules/.bin/postinstall
+node_modules/.bin/semver
+node_modules/.bin/uuid
+node_modules/multer/node_modules/.bin/mkdirp
