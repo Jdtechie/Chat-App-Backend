@@ -104,3 +104,25 @@ export const login = async (req: Request, res: Response) => {
       });
     }
   };
+export const getAllUsers = async (req: Request, res: Response) => {
+    try {
+  
+      // Find user
+      const users = await User.find({}, { name: 1, _id: 0 });
+      if (!users) {
+        return res.status(401).json({
+          message: "Invalid credentials",
+        });
+      }
+      // Send response
+      return res.status(201).json({
+        message: "All User Fetched Successfully",
+        All_Users: users
+      });
+    } catch (error) {
+      console.error(error);
+      return res.status(500).json({
+        message: "Something went wrong",
+      });
+    }
+  };
