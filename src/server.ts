@@ -15,12 +15,7 @@ const app = express(); // creating server instance
 
 // middlewares
 app.use(cors({
-  origin: "/*",  // allows requests from any origin
-  credentials: true
-}));  // allows http request without getting blocked
-
-app.options("*", cors({
-  origin: "*",
+  origin: "http://localhost:3000",
   credentials: true
 }));
 
