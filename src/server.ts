@@ -14,7 +14,16 @@ console.log("MONGO_URI =", process.env.MONGO_URI);
 const app = express(); // creating server instance
 
 // middlewares
-app.use(cors());   // allows http request without getting blocked
+app.use(cors({
+  origin: "*",  // allows requests from any origin
+  credentials: true
+}));  // allows http request without getting blocked
+
+app.options("*", cors({
+  origin: "*",
+  credentials: true
+}));
+
 app.use(express.json());  // allows server to read JSON data from requests
 
 // test route
