@@ -6,7 +6,7 @@ import mongoose from "mongoose";
 import cors from "cors";
 import conversationRoutes from "./routes/conversation.routes";
 import messageRoutes from "./routes/message.routes";
-
+import cookieParser from "cookie-parser";
 dotenv.config(); // reads and loads values into process.env
 console.log("MONGO_URI =", process.env.MONGO_URI);
 
@@ -18,7 +18,7 @@ app.use(cors({
   origin: "http://localhost:3000",
   credentials: true
 }));
-
+app.use(cookieParser());
 app.use(express.json());  // allows server to read JSON data from requests
 
 // test route
@@ -45,7 +45,7 @@ mongoose
   .then(() => {
     console.log("MongoDB connected");
     app.listen(PORT, () => {
-      console.log(`Server running on port ${PORT}`);
+      console.log(`Server running on port - ${PORT}`);
     });
   })
   .catch((err) => {
